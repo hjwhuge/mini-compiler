@@ -1,0 +1,16 @@
+{
+  "name": "mini-compiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest --run"
+  },
+  "keywords": [],
+  "author": "hjwhuge",
+  "license": "ISC",
+  "dependencies": {
+    "vitest": "^0.23.2"
+  }
+}
