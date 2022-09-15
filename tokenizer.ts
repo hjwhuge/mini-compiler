@@ -1,5 +1,11 @@
-interface token {
-  type: string;
+export enum TokenTypes {
+  paren,
+  name,
+  number,
+}
+
+export interface token {
+  type: TokenTypes;
   value: string;
 }
 
@@ -8,53 +14,53 @@ export function tokenizer(code: string) {
   let current = 0;
 
   while (current < code.length) {
-    let chart = code[current];
-    if (chart === "(") {
+    let char = code[current];
+    if (char === "(") {
       tokens.push({
-        type: "paren",
-        value: chart,
+        type: TokenTypes.paren,
+        value: char,
       });
       current++;
       continue;
     }
 
-    if (chart === ")") {
+    if (char === ")") {
       tokens.push({
-        type: "paren",
-        value: chart,
+        type: TokenTypes.paren,
+        value: char,
       });
       current++;
       continue;
     }
 
     const spaceReg = /\s/;
-    if (spaceReg.test(chart)) {
+    if (spaceReg.test(char)) {
       current++;
       continue;
     }
 
-    const strReg = /[a-z]/;
-    if (strReg.test(chart)) {
+    const strReg = /[a-z]/i;
+    if (strReg.test(char)) {
       let values = "";
-      while (strReg.test(chart) && current < code.length) {
-        values += chart;
-        chart = code[++current];
+      while (strReg.test(char) && current < code.length) {
+        values += char;
+        char = code[++current];
       }
       tokens.push({
-        type: "name",
+        type: TokenTypes.name,
         value: values,
       });
     }
 
     const numReg = /[0-9]/;
-    if (numReg.test(chart)) {
+    if (numReg.test(char)) {
       let values = "";
-      while (numReg.test(chart) && current < code.length) {
-        values += chart;
-        chart = code[++current];
+      while (numReg.test(char) && current < code.length) {
+        values += char;
+        char = code[++current];
       }
       tokens.push({
-        type: "number",
+        type: TokenTypes.number,
         value: values,
       });
     }
