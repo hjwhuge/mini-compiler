@@ -1,28 +1,12 @@
-import { token, TokenTypes } from "./tokenizer";
+import {
+  Token,
+  TokenTypes,
+  NodeTypes,
+  RootNode,
+  CallExpressionNode,
+} from "./ast";
 
-export enum NodeTypes {
-  Program,
-  CallExpression,
-  NumberLiteral,
-  StringLiteral,
-}
-
-interface Node {
-  type: NodeTypes;
-}
-
-interface RootNode extends Node {
-  body: (NumberNode | CallExpressionNode)[];
-}
-interface NumberNode extends Node {
-  value: string;
-}
-interface CallExpressionNode extends Node {
-  name: string;
-  params: (NumberNode | CallExpressionNode)[];
-}
-
-export function parser(tokens: token[]) {
+export function parser(tokens: Token[]) {
   const rootNode: RootNode = {
     type: NodeTypes.Program,
     body: [],
