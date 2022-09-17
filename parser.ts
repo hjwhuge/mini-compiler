@@ -3,6 +3,7 @@ import {
   TokenTypes,
   NodeTypes,
   RootNode,
+  NumberNode,
   CallExpressionNode,
 } from "./ast";
 
@@ -17,10 +18,11 @@ export function parser(tokens: Token[]) {
     let token = tokens[current];
     if (token.type === TokenTypes.number) {
       current++;
-      return {
+      const numberNode: NumberNode = {
         type: NodeTypes.NumberLiteral,
         value: token.value,
       };
+      return numberNode;
     }
 
     if (token.type === TokenTypes.paren && token.value === "(") {

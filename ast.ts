@@ -16,10 +16,12 @@ export enum NodeTypes {
 }
 
 export type ChildNode = NumberNode | CallExpressionNode;
+export type ParentNode = RootNode | CallExpressionNode | undefined;
 
 export interface RootNode {
   type: NodeTypes.Program;
   body: ChildNode[];
+  context?: ChildNode[];
 }
 export interface NumberNode {
   type: NodeTypes.NumberLiteral;
@@ -29,17 +31,12 @@ export interface CallExpressionNode {
   type: NodeTypes.CallExpression;
   name: string;
   params: ChildNode[];
+  context?: ChildNode[];
 }
 
 interface VisitorOption {
-  enter: (
-    node: ChildNode | RootNode,
-    parent: ChildNode | RootNode | undefined
-  ) => void;
-  exit: (
-    node: ChildNode | RootNode,
-    parent: ChildNode | RootNode | undefined
-  ) => void;
+  enter: (node: ChildNode | RootNode, parent: ParentNode) => void;
+  exit?: (node: ChildNode | RootNode, parent: ParentNode) => void;
 }
 export interface Visitor {
   Program?: VisitorOption;

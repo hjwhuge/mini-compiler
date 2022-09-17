@@ -1,18 +1,15 @@
-import { NodeTypes, RootNode, ChildNode, Visitor } from "./ast";
+import { NodeTypes, RootNode, ChildNode, ParentNode, Visitor } from "./ast";
 
 export function traverse(rootNode: RootNode, visitor: Visitor) {
   // 1. 深度优先遍历
   // 2. Visitor
 
-  function traverseArray(array: ChildNode[], parent?: ChildNode | RootNode) {
+  function traverseArray(array: ChildNode[], parent: ParentNode) {
     array.forEach((node) => {
       traverseNode(node, parent);
     });
   }
-  function traverseNode(
-    node: ChildNode | RootNode,
-    parent?: ChildNode | RootNode
-  ) {
+  function traverseNode(node: ChildNode | RootNode, parent?: ParentNode) {
     // enter
     const visitorObj = visitor[node.type];
     if (visitorObj) {
@@ -29,7 +26,7 @@ export function traverse(rootNode: RootNode, visitor: Visitor) {
         break;
     }
     // exit
-    if (visitorObj) {
+    if (visitorObj && visitorObj.exit) {
       visitorObj.exit(node, parent);
     }
   }
