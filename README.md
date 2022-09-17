@@ -145,7 +145,7 @@ ouput(AST)
                                   | }
   ```
 
-- 代码生成
+- [代码生成](./codeGenerator.ts)
 
   ```javascript
   input(AST)
@@ -192,6 +192,8 @@ ouput(AST)
   ```
 
 总结
+
+[compiler](./compiler.ts)
 
 1.  input => tokenizer => tokens
 2.  tokens => parser => ast
