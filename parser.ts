@@ -41,7 +41,7 @@ export function parser(tokens: Token[]) {
       return node;
     }
 
-    throw new Error(`不认识的${token}`);
+    throw new Error(`do not recognize${token}`);
   }
 
   while (current < tokens.length) {

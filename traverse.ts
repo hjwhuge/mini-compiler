@@ -1,7 +1,7 @@
 import { NodeTypes, RootNode, ChildNode, ParentNode, Visitor } from "./ast";
 
 export function traverse(rootNode: RootNode, visitor: Visitor) {
-  // 1. 深度优先遍历
+  // 1. depth-first
   // 2. Visitor
 
   function traverseArray(array: ChildNode[], parent: ParentNode) {
