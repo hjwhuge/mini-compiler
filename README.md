@@ -2,11 +2,11 @@
 
 The smallest compiler
 
-步骤
+Step
 
-- 解析
+- Parsing
 
-- [词法分析](./tokenizer.ts)
+- [Lexical analysis](./tokenizer.ts)
 
 ```javascript
 input
@@ -25,7 +25,7 @@ ouput(Tokens)
   ]
 ```
 
-- [语法分析](./parser.ts)
+- [Syntactic analysis](./parser.ts)
 
 ```javascript
 input(Tokens)
@@ -64,10 +64,10 @@ ouput(AST)
   }
 ```
 
-- 转换
+- Transformation
 
-  - [遍历 AST](./traverse.ts)
-    > 深度优先
+  - [Traversal AST](./traverse.ts)
+    > depth-first
 
   ```javascript
   input(AST)
@@ -92,7 +92,7 @@ ouput(AST)
       }]
     }]
   }
-  ouput(遍历顺序)
+  ouput(Traversal order)
   [
     "program-enter",
     "callExpression-enter",
@@ -109,7 +109,7 @@ ouput(AST)
   ]
   ```
 
-  - [转换 AST](./transformer.ts)
+  - [transformer AST](./transformer.ts)
 
   ```javascript
           Original AST            |      Transformed AST
@@ -145,7 +145,7 @@ ouput(AST)
                                   | }
   ```
 
-- [代码生成](./codeGenerator.ts)
+- [Code Generator](./codeGenerator.ts)
 
   ```javascript
   input(AST)
@@ -191,7 +191,7 @@ ouput(AST)
   "add(2, subtract(4, 2));"
   ```
 
-总结
+Summarize
 
 [compiler](./compiler.ts)
 
@@ -200,8 +200,13 @@ ouput(AST)
 3.  ast => transformer => newAst
 4.  newAst => generator => output
 
-## 🌸 感谢
+Unlike the-super-tiny-compiler
 
-这个项目深受以下很棒的项目的启发.
+- use Typescript
+- use Vitest
+
+## 🌸 grateful
+
+This project is deeply inspired by the following great projects.
 
 - [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
