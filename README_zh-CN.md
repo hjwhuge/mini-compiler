@@ -1,14 +1,14 @@
-# mini-compiler
+# 迷你编译器
 
-> The smallest compiler
+> 最小的编译器
 
-English | [简体中文](README.zh-CN.md)
+[English](README.md) | 简体中文
 
-## Step
+## 步骤
 
-### 1、Parsing
+### 1、解析
 
-- [Lexical analysis](./src/tokenizer.ts)
+- [词法分析](./src/tokenizer.ts)
 
 ```javascript
 input
@@ -27,7 +27,7 @@ ouput(Tokens)
   ]
 ```
 
-- [Syntactic analysis](./src/parser.ts)
+- [语法分析](./src/parser.ts)
 
 ```javascript
 input(Tokens)
@@ -66,10 +66,10 @@ ouput(AST)
   }
 ```
 
-### 2、Transformation
+### 2、转换
 
-- [Traversal AST](./src/traverse.ts)
-  > depth-first
+- [遍历 AST](./src/traverse.ts)
+    > 深度优先
 
   ```javascript
   input(AST)
@@ -111,7 +111,7 @@ ouput(AST)
   ]
   ```
 
-  - [transformer AST](./src/transformer.ts)
+- [转换 AST](./src/transformer.ts)
 
   ```javascript
           Original AST            |      Transformed AST
@@ -147,7 +147,7 @@ ouput(AST)
                                   | }
   ```
 
-### 3、[Code Generator](./src/codeGenerator.ts)
+### 3、[代码生成](./src/codeGenerator.ts)
 
   ```javascript
   input(AST)
@@ -193,22 +193,22 @@ ouput(AST)
   "add(2, subtract(4, 2));"
   ```
 
-## Summarize
+## 总结
 
-[compiler](./src/index.ts)
+[编译器](./src/index.ts)
 
 1.  input => tokenizer => tokens
 2.  tokens => parser => ast
 3.  ast => transformer => newAst
 4.  newAst => generator => output
 
-Unlike the-super-tiny-compiler
+与 the-super-tiny-compiler 的不同之处
 
 - use Typescript
 - use Vitest
 
-## 🌸 grateful
+## 🌸 致谢
 
-This project is deeply inspired by the following great projects.
+该项目深受以下优秀项目的启发。
 
 - [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
