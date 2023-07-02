@@ -1,4 +1,4 @@
-import { NodeTypes, RootNode, ChildNode, ParentNode, Visitor } from "./ast";
+import { NodeTypes, RootNode, ChildNode, ParentNode, Visitor } from "../type/ast";
 
 export function traverse(rootNode: RootNode, visitor: Visitor) {
   // 1. depth-first

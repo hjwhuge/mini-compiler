@@ -1,6 +1,6 @@
 import { test, expect, describe } from "vitest";
-import { NodeTypes, RootNode } from "./ast";
-import { transformer } from "./transformer";
+import { NodeTypes, RootNode } from "../type/ast";
+import { transformer } from "../src/transformer";
 
 describe("transformer", () => {
   test("main", () => {

@@ -1,4 +1,4 @@
-import { NodeTypes, NumberNode, RootNode } from "./ast";
+import { NodeTypes, NumberNode, RootNode } from "../type/ast";
 import { traverse } from "./traverse";
 export function transformer(ast: RootNode) {
   const newAst = {

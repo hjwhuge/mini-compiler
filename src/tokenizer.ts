@@ -1,4 +1,4 @@
-import { TokenTypes, Token } from "./ast";
+import { TokenTypes, Token } from "../type/ast";
 
 export function tokenizer(code: string) {
   let tokens: Token[] = [];

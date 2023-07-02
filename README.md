@@ -6,7 +6,7 @@ Step
 
 - Parsing
 
-- [Lexical analysis](./tokenizer.ts)
+- [Lexical analysis](./src/tokenizer.ts)
 
 ```javascript
 input
@@ -25,7 +25,7 @@ ouput(Tokens)
   ]
 ```
 
-- [Syntactic analysis](./parser.ts)
+- [Syntactic analysis](./src/parser.ts)
 
 ```javascript
 input(Tokens)
@@ -66,7 +66,7 @@ ouput(AST)
 
 - Transformation
 
-  - [Traversal AST](./traverse.ts)
+  - [Traversal AST](./src/traverse.ts)
     > depth-first
 
   ```javascript
@@ -109,7 +109,7 @@ ouput(AST)
   ]
   ```
 
-  - [transformer AST](./transformer.ts)
+  - [transformer AST](./src/transformer.ts)
 
   ```javascript
           Original AST            |      Transformed AST
@@ -145,7 +145,7 @@ ouput(AST)
                                   | }
   ```
 
-- [Code Generator](./codeGenerator.ts)
+- [Code Generator](./src/codeGenerator.ts)
 
   ```javascript
   input(AST)
@@ -193,7 +193,7 @@ ouput(AST)
 
 Summarize
 
-[compiler](./compiler.ts)
+[compiler](./src/index.ts)
 
 1.  input => tokenizer => tokens
 2.  tokens => parser => ast

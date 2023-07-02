@@ -5,7 +5,7 @@ import {
   RootNode,
   NumberNode,
   CallExpressionNode,
-} from "./ast";
+} from "../type/ast";
 
 export function parser(tokens: Token[]) {
   const rootNode: RootNode = {

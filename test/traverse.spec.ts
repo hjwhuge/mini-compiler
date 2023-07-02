@@ -1,6 +1,6 @@
 import { test, expect, describe } from "vitest";
-import { NodeTypes, RootNode, Visitor } from "./ast";
-import { traverse } from "./traverse";
+import { NodeTypes, RootNode, Visitor } from "../type/ast";
+import { traverse } from "../src/traverse";
 
 describe("traverse", () => {
   test("main", () => {

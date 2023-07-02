@@ -1,5 +1,5 @@
 import { test, expect, describe } from "vitest";
-import { codeGenerator } from "./codeGenerator";
+import { codeGenerator } from "../src/codeGenerator";
 
 describe("codeGenerator", () => {
   test("main", () => {

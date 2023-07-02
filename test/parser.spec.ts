@@ -1,6 +1,6 @@
 import { test, expect, describe } from "vitest";
-import { parser } from "./parser";
-import { TokenTypes, NodeTypes } from "./ast";
+import { parser } from "../src/parser";
+import { TokenTypes, NodeTypes } from "../type/ast";
 
 describe("parser", () => {
   test("main", () => {
